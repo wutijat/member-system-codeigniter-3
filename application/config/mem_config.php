@@ -12,3 +12,5 @@ $config['upload'] = [
     'max_width' => 6000,
     'max_height' => 6000
 ];
+
+$config['member_ex_picture'] = 'member-place-holder.png';

@@ -18,7 +18,8 @@ class Register extends Mem_controller
 
             $rs_pf_name = $this->mpn->select();
             $data = [
-                'rs_pf_name' => $rs_pf_name
+                'rs_pf_name' => $rs_pf_name,
+                'ex_mem_picture' => $this->ex_mem_picture
             ];
             $this->output('v_register', $data);
         }
@@ -72,7 +73,7 @@ class Register extends Mem_controller
                 $this->db->trans_rollback();
             } else {
                 $this->db->trans_commit();
-                redirect(base_url('Dashboard/show'), 'refresh');
+                redirect(base_url('Management/show'), 'refresh');
             }
         }
     }
@@ -86,7 +87,7 @@ class Register extends Mem_controller
             $this->mrg->reg_id = $id;
             $this->mrg->reg_use = 'n';
             $this->mrg->update_reg_use();
-            redirect(base_url('Dashboard/show'), 'refresh');
+            redirect(base_url('Management/show'), 'refresh');
         }
     }
 
@@ -133,7 +134,7 @@ class Register extends Mem_controller
                     $this->db->trans_rollback();
                 } else {
                     $this->db->trans_commit();
-                    redirect(base_url('Dashboard/show'), 'refresh');
+                    redirect(base_url('Management/show'), 'refresh');
                 }
             }
         }

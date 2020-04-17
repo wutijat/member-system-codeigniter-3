@@ -2,7 +2,7 @@
 require_once(APPPATH . 'controllers/Mem_controller.php');
 
 
-class Dashboard extends Mem_controller
+class Management extends Mem_controller
 {
     public function __construct()
     {
@@ -21,7 +21,7 @@ class Dashboard extends Mem_controller
             $data = [
                 'rs_register_detail' => $rs_register_detail
             ];
-            $this->output('v_dashboard', $data);
+            $this->output('v_management', $data);
         }
     }
 
@@ -44,4 +44,4 @@ class Dashboard extends Mem_controller
     }
 }
 
-/* End of file Dashboard.php */
+/* End of file Management.php */

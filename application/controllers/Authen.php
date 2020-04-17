@@ -11,9 +11,9 @@ class Authen extends Mem_controller
     public function show()
     {
         if (get_cookie('authen') === null) {
-            $this->output('v_authen',['is_login'=>true]);
+            $this->output('v_authen');
         } else {
-            redirect(base_url('Dashboard/show'), 'refresh');
+            redirect(base_url('Management/show'), 'refresh');
         }
     }
 
@@ -25,7 +25,7 @@ class Authen extends Mem_controller
         $this->mrg->reg_username = $username;
         $this->mrg->reg_password = $password;
         $rs_select = $this->mrg->select();
-
+        
         if (COUNT($rs_select)) {
 
             $cookie = [
@@ -33,9 +33,11 @@ class Authen extends Mem_controller
                 'value'   => $rs_select[0]->reg_id,
                 'expire' => 60 * 60 * 0.5, //second // 30  minute to exprice
             ];
+
             $this->input->set_cookie($cookie); //get_cookie('authen')
+
             if ($rs_select[0]->reg_admin == 'y') {
-                redirect(base_url('Dashboard/show'), 'refresh');
+                redirect(base_url('Management/show'), 'refresh');
             }
         } else {
             $this->session->set_flashdata('login_failed', true);

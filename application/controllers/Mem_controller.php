@@ -7,6 +7,7 @@ class Mem_controller extends CI_Controller
     public $header;
     public $footer;
     public $upload_config;
+    public $ex_mem_picture;
 
     public function __construct()
     {
@@ -14,6 +15,7 @@ class Mem_controller extends CI_Controller
         $this->config->load('mem_config');
         $this->header = $this->config->item('template')['header'];
         $this->footer = $this->config->item('template')['footer'];
+        $this->ex_mem_picture = $this->config->item('member_ex_picture');
         $this->upload_config = $this->config->item('upload');
     }
 
