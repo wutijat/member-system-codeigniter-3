@@ -1,14 +1,32 @@
 <?php
+/*
+Register
+Controller of Register Member
+@author Supak Pukdam
+@Create Date 2563-04-20
+*/
 require_once(APPPATH . 'controllers/Mem_controller.php');
-
-
 class Register extends Mem_controller
 {
+    /*Inherited from Mem_controller
+	* @name __construct
+	* @input   -
+	* @output  -
+	* @author Supak Pukdam
+	* @Create Date 2563-04-20
+	*/
     public function __construct()
     {
         parent::__construct();
     }
 
+    /*show Register page
+	* @name show
+	* @input   -
+	* @output  'v_register' register page OR 'v_authen' Authen page
+	* @author Supak Pukdam
+	* @Create Date 2563-04-20
+	*/
     public function show()
     {
         if (get_cookie('authen') === null) {
@@ -25,6 +43,13 @@ class Register extends Mem_controller
         }
     }
 
+    /*edit Register
+	* @name edit
+	* @input    @post[reg_id] id form management page ,
+	* @output  'v_management' management page OR 'v_authen' Authen page
+	* @author Supak Pukdam
+	* @Create Date 2563-04-20
+	*/
     public function edit()
     {
         if (get_cookie('authen') === null) {
@@ -78,6 +103,13 @@ class Register extends Mem_controller
         }
     }
 
+    /*cancel Register by reg_id
+	* @name cancel
+	* @input    $id number form management page ,
+	* @output  'v_management' management page OR 'v_authen' Authen page
+	* @author Supak Pukdam
+	* @Create Date 2563-04-20
+	*/
     public function cancel($id)
     {
         if (get_cookie('authen') === null) {
@@ -91,6 +123,13 @@ class Register extends Mem_controller
         }
     }
 
+    /*enroll Register
+	* @name enroll
+	* @input    $data @post value array from 'v_register'
+	* @output  'v_management' management page OR 'v_authen' Authen page
+	* @author Supak Pukdam
+	* @Create Date 2563-04-20
+	*/
     public function enroll()
     {
         if (get_cookie('authen') === null) {

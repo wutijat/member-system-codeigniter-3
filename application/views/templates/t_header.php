@@ -23,6 +23,9 @@
   <!-- Chart .js -->
   <script src="<?php echo base_url('assets/startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/Chart.js'); ?>"></script>
 
+  <!-- SweetAlert2 .js -->
+  <script src="<?php echo base_url('assets/sweet-alert-2/sweetalert2@9.js'); ?>"></script>
+
 
   <title>ระบบสมาชิก</title>
 </head>
@@ -61,11 +64,6 @@
           <a class="nav-link" href="<?php echo base_url('Management/show') ?>">
             <i class="fas fa-fw fa-cog"></i>
             <span>จัดการสมาชิก</span></a>
-
-          <a class="nav-link" href="index.html">
-            <i class="fas fa-file-export"></i>
-            <span>ส่งออกรายงาน</span></a>
-
 
         </li>
 

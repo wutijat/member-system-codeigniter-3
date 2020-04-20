@@ -21,7 +21,7 @@ class M_register extends CI_Model
         $this->db->insert('register', $this);
     }
 
-    public function select($join = 0, $fill = '*')
+    public function select($join = 0, $where=null, $fill = '*')
     {
         // default *
         $this->db->select($fill);
@@ -50,6 +50,11 @@ class M_register extends CI_Model
         }
         if (isset($this->reg_admin)) {
             $this->db->where('reg_admin', $this->reg_admin);
+        }
+
+        // where params
+        if (isset($where)) {
+            $this->db->where($where);
         }
 
         $query = $this->db->get();
